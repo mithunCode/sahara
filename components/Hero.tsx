@@ -22,16 +22,14 @@ const testimonials = [
     quote:
       "Many People tried unique designs for my Hall but Sahara engineering prefer to be more creative, so POP designs for my Hall now looks incredible with less cost as compared to others  , yet outstanding ideas. Worth for money . Playing with brighten led light and paint colours against the sober white gypsum false background of the Pop material and it assured to bring an interesting character to the my Hall and expectation successfully completed .",
     name: "Nagraj Godi",
-   
   },
- 
+
   {
     quote:
       "They just completed a shade work over my building just recently. The shade will help from rain leakage from the roof. I had researched a lot of  businesss to finally choose them. Believe me, the work that they did was beyond my expectations and in the time limit i had set for them. Best was even though, i was a pain of complaints and suggestions. They were very patient and completely satisfied my queries, very professionally, and also taking into account my ideas and suggestions. Two words for thier service par excellence.. i would recommend every Goan to work with them in thier projects if they want proffesional work and value for thier money...just want to say. Thank you for a Superb Job guys.",
     name: "Alvin Fernandes",
-  
   },
- 
+
   {
     quote:
       "Sahara team will explain clearly everything about the construction work . 24 hour available to solve the ongoing problem while working . Responsive , professional, less cost budgeted plan . They showed me the actual 3D model of my house and happy to work with them .",
@@ -62,7 +60,6 @@ const testimonials = [
     name: "Ashish kumar samanta",
     title: "Punctuality",
   },
- 
 ];
 const Hero = () => {
   return (
@@ -104,7 +101,9 @@ const Hero = () => {
         <h4 className={`${garamond.className}  + font-semibold text-3xl`}>
           Our Story.
         </h4>
-        <p className={`${garamond.className}  + text-xl text-center p-10 max-sm:text-md max-sm:p-2 w-screen`}>
+        <p
+          className={`${garamond.className}  + text-xl text-center p-10 max-sm:text-md max-sm:p-2 w-screen`}
+        >
           SAHARA ENGINEERING WORKS is peoples company which are into
           construction and interiors services.
           <br></br>
@@ -121,13 +120,14 @@ const Hero = () => {
           Flooring , False ceiling , Fabrication ,Furniture & Painting work.
         </p>
         <div className="flex justify-center items-center gap-10">
-        <a
-          href="/contact"
-          className="bg-black text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2 mb-4 shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4"
-        >
-          Contact Us ->
-        </a></div>
-        
+          <a
+            href="/contact"
+            className="bg-black text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2 mb-4 shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4"
+          >
+            Contact Us -&gt;
+          </a>
+        </div>
+
         <Image
           src="/heropage.jpg"
           width={500}
@@ -135,41 +135,61 @@ const Hero = () => {
           alt="construction"
           className="flex justify-center items-center  "
         />
-      <hr className="  h-2 w-full m-4 p-4 text-black" />
-       <h4 className={`${garamond.className}  + font-semibold text-3xl p-4`}>
-      Why Choose Us..?
+        <hr className="  h-2 w-full m-4 p-4 text-black" />
+        <h4 className={`${garamond.className}  + font-semibold text-3xl p-4`}>
+          Why Choose Us..?
         </h4>
-        <p className={`${garamond.className}  + text-xl text-center font-semibold p-4 w-screen`}>
-         We go beyond the ordinary to exceed your expectations , ensuring that every detail is meticulously crafted  to perfection.
+        <p
+          className={`${garamond.className}  + text-xl text-center font-semibold p-4 w-screen`}
+        >
+          We go beyond the ordinary to exceed your expectations , ensuring that
+          every detail is meticulously crafted to perfection.
         </p>
-        <ul className={`${garamond.className}  + text-lg  p-5 flex flex-col gap-10 mb-2  w-screen max-sm:items-start max-sm:px-10`}>
-          <li className="flex items-center justify-center gap-2"><FaHandPointRight /> Begin with a Mindset of Gratitude
+        <ul
+          className={`${garamond.className}  + text-lg  p-5 flex flex-col gap-10 mb-2  w-screen max-sm:items-start max-sm:px-10`}
+        >
+          <li className="flex items-center justify-center gap-2">
+            <FaHandPointRight /> Begin with a Mindset of Gratitude
           </li>
-       
-           <li className="flex items-center justify-center gap-2"><FaHandPointRight />Meet Expectations, Then Work Hard to Exceed Expectations</li>
-          <li className="flex items-center justify-center gap-2"><FaHandPointRight />Deliver Effective Open and Honest Communication</li>
-          <li className="flex items-center justify-center gap-2"><FaHandPointRight />Client Centric Approach</li>
-          <li className="flex items-center justify-center gap-2"><FaHandPointRight />Quality and Safety</li>
-          <li className="flex items-center justify-center gap-2"><FaHandPointRight />Innovative Solutions</li>
 
-    
+          <li className="flex items-center justify-center gap-2">
+            <FaHandPointRight />
+            Meet Expectations, Then Work Hard to Exceed Expectations
+          </li>
+          <li className="flex items-center justify-center gap-2">
+            <FaHandPointRight />
+            Deliver Effective Open and Honest Communication
+          </li>
+          <li className="flex items-center justify-center gap-2">
+            <FaHandPointRight />
+            Client Centric Approach
+          </li>
+          <li className="flex items-center justify-center gap-2">
+            <FaHandPointRight />
+            Quality and Safety
+          </li>
+          <li className="flex items-center justify-center gap-2">
+            <FaHandPointRight />
+            Innovative Solutions
+          </li>
         </ul>
         <a
           href="/services "
           className="bg-black text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2 mb-4 shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300"
         >
-          Our Services ->
+          Our Services -&gt;
         </a>
         <hr className="  h-2 w-full m-4 p-4 text-black" />
         <h4 className={`${garamond.className}  + font-semibold text-3xl pb-8`}>
-        What Our Clients Are Saying..
+          What Our Clients Are Saying..
         </h4>
-       
-        <InfiniteMovingCards  items={testimonials}
-          direction="right"
-          speed="slow"/>
-      </div>
 
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
+      </div>
     </section>
   );
 };
