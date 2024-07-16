@@ -22,12 +22,14 @@ const testimonials = [
     quote:
       "Many People tried unique designs for my Hall but Sahara engineering prefer to be more creative, so POP designs for my Hall now looks incredible with less cost as compared to others  , yet outstanding ideas. Worth for money . Playing with brighten led light and paint colours against the sober white gypsum false background of the Pop material and it assured to bring an interesting character to the my Hall and expectation successfully completed .",
     name: "Nagraj Godi",
+    title: "",
   },
 
   {
     quote:
       "They just completed a shade work over my building just recently. The shade will help from rain leakage from the roof. I had researched a lot of  businesss to finally choose them. Believe me, the work that they did was beyond my expectations and in the time limit i had set for them. Best was even though, i was a pain of complaints and suggestions. They were very patient and completely satisfied my queries, very professionally, and also taking into account my ideas and suggestions. Two words for thier service par excellence.. i would recommend every Goan to work with them in thier projects if they want proffesional work and value for thier money...just want to say. Thank you for a Superb Job guys.",
     name: "Alvin Fernandes",
+    title: "",
   },
 
   {
