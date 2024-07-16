@@ -1,8 +1,9 @@
+"use client";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { EB_Garamond, Raleway } from "next/font/google";
 const raleway = Raleway({ subsets: ["latin"] });
 const garamond = EB_Garamond({ subsets: ["latin"] });
-export const projects = [
+const projects = [
   {
     title: "Civil Construction",
     description:
