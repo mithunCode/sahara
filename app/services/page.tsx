@@ -6,7 +6,7 @@ export const projects = [
   {
     title: "Civil Construction",
     description:
-      " Civil construction right from Designing perfet layout , 3D model , construction to final handover",
+      " Civil construction right from Designing perfect layout , 3D model , construction to final handover",
     link: "/services.jpg",
   },
   {
