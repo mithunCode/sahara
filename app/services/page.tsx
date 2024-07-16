@@ -1,4 +1,3 @@
-"use client";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { EB_Garamond, Raleway } from "next/font/google";
 const raleway = Raleway({ subsets: ["latin"] });
