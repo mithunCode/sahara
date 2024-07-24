@@ -65,19 +65,7 @@ const testimonials = [
 const Hero = () => {
   return (
     <section className="">
-      <div className=" h-screen  bg-[url('/finalbg.jpg')]  bg-transparent bg-cover px-10 pt-10 max-sm:w-[96]  ">
-        {/* <div>
-          <Spotlight
-            className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-            fill="white"
-          />
-          <Spotlight
-            className="h-[80vh] w-[50vw] top-10 left-full"
-            fill="purple"
-          />
-          <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
-        </div> */}
-
+      <div className=" h-screen  bg-[url('/finalBg.jpg')]  bg-transparent bg-cover px-10 pt-10 max-sm:w-[96]  ">
         <div
           className="h-screen w-screen dark:bg-black-100 dark:bg-grid-white/[0.03] 
        absolute top-0 left-0 bottom-0 backdrop-blur-[.2px]  "
