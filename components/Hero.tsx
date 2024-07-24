@@ -1,6 +1,5 @@
 "use client";
 
-import { Spotlight } from "../components/ui/Spotlight";
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import { EB_Garamond, Raleway } from "next/font/google";
 import Image from "next/image";
@@ -66,8 +65,8 @@ const testimonials = [
 const Hero = () => {
   return (
     <section className="">
-      <div className=" h-screen  bg-[url('/bgmain.jpg')]  bg-transparent bg-cover px-10 pt-10 max-sm:w-[96] ">
-        <div>
+      <div className=" h-screen  bg-[url('/finalbg.jpg')]  bg-transparent bg-cover px-10 pt-10 max-sm:w-[96]  ">
+        {/* <div>
           <Spotlight
             className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
             fill="white"
@@ -77,29 +76,37 @@ const Hero = () => {
             fill="purple"
           />
           <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
-        </div>
+        </div> */}
 
         <div
           className="h-screen w-screen dark:bg-black-100 dark:bg-grid-white/[0.03] 
-       absolute top-0 left-0 bottom-0  backdrop-blur-sm"
+       absolute top-0 left-0 bottom-0 backdrop-blur-[.2px]  "
         ></div>
 
-        <div className="flex justify-center items-center relative  z-10 h-screen ">
-          <div className="md:max-w-2xl lg:max-w-[99vw] flex flex-col items-center justify-center">
+        <div className="flex justify-start items-center relative  z-10 h-screen max-lg:justify-center max-lg:items-start max-lg:mt-24 pl-16 ">
+          <div className="md:max-w-2xl lg:max-w-[99vw] px-10 flex flex-col items-start justify-start max-lg:justify-start max-md:items-start ">
             <TextGenerateEffect
-              words="SAHARA ENGINEERING WORKS"
-              className={`${raleway.className}  + font-extrabold   md:text-3xl lg:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-5xl max-sm:text-center max-sm:leading-[60px] `}
+              words="SAHARA"
+              className={`${raleway.className}  + font-extrabold text-violet-800   sm:text-3xl md:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-6xl  max-sm:leading-[60px] max-lg:pl-1 `}
+            />
+            <TextGenerateEffect
+              words=" ENGINEERING "
+              className={`${raleway.className}  + font-extrabold text-violet-800   sm:text-4xl md:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-5xl  max-sm:leading-[60px] max-lg:pl-1`}
+            />
+            <TextGenerateEffect
+              words="  WORKS"
+              className={`${raleway.className}  + font-extrabold text-violet-800   sm:text-4xl md:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-5xl  max-sm:leading-[60px] max-lg:pl-1`}
             />
 
             <TextGenerateEffect
               words=" We Connect . You Grow"
               className={`${raleway.className}  +
-               mt-7 md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl max-sm:text-2xl`}
+               mt-7 md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl max-sm:text-xl max-lg:pl-2`}
             />
           </div>
         </div>
       </div>
-      <div className=" flex flex-col items-center justify-center">
+      <div className=" flex flex-col items-center justify-center mt-5">
         <h4 className={`${garamond.className}  + font-semibold text-3xl`}>
           Our Story.
         </h4>

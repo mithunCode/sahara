@@ -18,7 +18,7 @@ export default function Home() {
         </p>
       </div>
       <div className="flex justify-center flex-col items-center  w-full p-10">
-        <p className="text-center p-8">
+        <p className={`${garamond.className} + text-center text-xl p-8  `}>
           Sahara Engineering Works has proven experience on a wide range of
           projects. <br />
           Every detail of these projects is the most important detail to us.{" "}
@@ -34,7 +34,7 @@ export default function Home() {
           verticalSwipe="natural"
           autoPlay
           showThumbs={true}
-          className="w-[700px] max-sm:w-[400px] "
+          className="w-[700px] max-sm:w-[400px] bg-slate-100"
         >
           <div>
             <img

@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -25,8 +26,7 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
+        <div
           key={item?.link}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
@@ -52,9 +52,16 @@ export const HoverEffect = ({
 
           <Card>
             <CardTitle>{item.title}</CardTitle>
+            <Image
+              src={item.link ? item?.link : "bg.png"}
+              width={300}
+              height={300}
+              alt={item.link}
+              className="rounded-md mt-2 shadow-xl hover:rounded-2xl hover:translate-x-4"
+            />
             <CardDescription>{item.description}</CardDescription>
           </Card>
-        </Link>
+        </div>
       ))}
     </div>
   );
