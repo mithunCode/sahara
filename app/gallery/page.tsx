@@ -40,7 +40,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image1"
               src="/galleryImages/1.jpg"
             />
           </div>
@@ -48,7 +48,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image2"
               src="/galleryImages/2.jpg"
             />
           </div>
@@ -56,7 +56,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image3"
               src="/galleryImages/3.jpg"
             />
           </div>
@@ -64,7 +64,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image4"
               src="/galleryImages/4.jpg"
             />
           </div>
@@ -72,7 +72,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image5"
               src="/galleryImages/5.jpg"
             />
           </div>
@@ -80,8 +80,8 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
-              src="/galleryImages/17.jpg"
+              alt="Image18"
+              src="/galleryImages/18.jpg"
             />
           </div>
           <div>
@@ -89,7 +89,7 @@ export default function Home() {
               width={50}
               height={50}
               className=""
-              alt="slider"
+              alt="Image7"
               src="/galleryImages/7.jpg"
             />
           </div>
@@ -97,7 +97,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image8"
               src="/galleryImages/8.jpg"
             />
           </div>
@@ -105,7 +105,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image17"
               src="/galleryImages/17.jpg"
             />
           </div>
@@ -113,7 +113,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image10"
               src="/galleryImages/10.jpg"
             />
           </div>
@@ -121,7 +121,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image11"
               src="/galleryImages/11.jpg"
             />
           </div>
@@ -129,7 +129,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image12"
               src="/galleryImages/12.jpg"
             />
           </div>
@@ -137,7 +137,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image13"
               src="/galleryImages/13.jpg"
             />
           </div>
@@ -145,7 +145,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image14"
               src="/galleryImages/14.jpg"
             />
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image15"
               src="/galleryImages/15.jpg"
             />
           </div>
@@ -161,7 +161,7 @@ export default function Home() {
             <img
               width={50}
               height={50}
-              alt="slider"
+              alt="Image16"
               src="/galleryImages/16.jpg"
             />
           </div>
