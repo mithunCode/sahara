@@ -1,15 +1,17 @@
 "use client";
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
+import { Raleway } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+const raleway = Raleway({ subsets: ["latin"] });
 export const HoverEffect = ({
   items,
   className,
 }: {
   items: {
+    id: number;
     title: string;
     description: string;
     link: string;
@@ -57,9 +59,16 @@ export const HoverEffect = ({
               width={300}
               height={300}
               alt={item.link}
-              className="rounded-md mt-2 shadow-xl hover:rounded-2xl hover:translate-x-4"
+              className="rounded-md my-10  hover:origin-top hover:rotate-1  shadow-xl hover:rounded-2xl hover:scale-110"
             />
-            <CardDescription>{item.description}</CardDescription>
+            <CardDescription className="">{item.description}</CardDescription>
+            <Link href={`/services/${item.id}`}>
+              <button
+                className={`${raleway.className}  + tracking-wider	 bg-blue-700 hover:bg-blue-500 text-white  p-2 my-4 text-xs rounded-lg `}
+              >
+                View Pricing
+              </button>
+            </Link>
           </Card>
         </div>
       ))}
@@ -77,7 +86,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-slate-900 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-slate-900 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 ",
         className
       )}
     >

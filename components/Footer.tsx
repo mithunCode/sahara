@@ -18,7 +18,7 @@ const Footer = () => {
         <a href={`tel:${8007567652}`}>{9763133132} |</a>
         <a href={`tel:${8007567652}`}>{8208743416}</a>
       </div>
-      <div className="flex justify-center items-center gap-10 text-slate-600">
+      <div className="flex justify-center items-center gap-10 mt-2 text-slate-600">
         <a
           target="_blank"
           href="https://www.instagram.com/sahara_engineering_works?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="

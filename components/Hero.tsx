@@ -1,11 +1,9 @@
 "use client";
 
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
+import { RevealOnScroll } from "../components/RevealOnScroll";
 import { EB_Garamond, Raleway } from "next/font/google";
 import Image from "next/image";
-
-import { motion } from "framer-motion";
-import { AuroraBackground } from "./ui/aurora-background";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { FaHandPointRight } from "react-icons/fa6";
 const raleway = Raleway({ subsets: ["latin"] });
@@ -62,117 +60,143 @@ const testimonials = [
     title: "Punctuality",
   },
 ];
+
 const Hero = () => {
   return (
     <section className="">
-      <div className=" h-screen  bg-[url('/finalBg.jpg')]  bg-transparent bg-cover px-10 pt-10 max-sm:w-[96]  ">
+      <div className=" h-screen bg-fixed  bg-[url('/finalBg.jpg')] lg:shadow-lg  bg-transparent bg-cover px-10 pt-10  bg-right-bottom max-sm:bg-right-top ">
         <div
           className="h-screen w-screen dark:bg-black-100 dark:bg-grid-white/[0.03] 
-       absolute top-0 left-0 bottom-0 backdrop-blur-[.2px]  "
+       absolute top-0 left-0 bottom-0 backdrop-blur-[.2px]  max-lg:bg-black-100/30"
         ></div>
 
-        <div className="flex justify-start items-center relative  z-10 h-screen max-lg:justify-center max-lg:items-start max-lg:mt-24 pl-16 ">
-          <div className="md:max-w-2xl lg:max-w-[99vw] px-10 flex flex-col items-start justify-start max-lg:justify-start max-md:items-start ">
+        <div className="flex justify-start items-center relative   z-10 h-screen max-lg:justify-center max-lg:items-center max-lg:backdrop-blur-[2px] max-md:px-2 ">
+          <div className=" lg:max-w-[99vw] px-10 flex flex-col items-start justify-start gap-5 max-md:justify-center max-md:items-center max-lg:text-white max-md:px-10 max-md:text-center">
             <TextGenerateEffect
               words="SAHARA"
-              className={`${raleway.className}  + font-extrabold text-violet-800   sm:text-3xl md:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-6xl  max-sm:leading-[60px] max-lg:pl-1 `}
+              className={`${raleway.className}  +   font-extrabold lg:bg-violet-800  text-yellow-300 lg:shadow-2xl p-2 rounded-xl tracking-wider drop-shadow-xl   sm:text-7xl md:text-7xl   max-sm:break-words max-sm:w-screen max-sm:text-7xl  max-sm:leading-[60px] max-lg:pl-1 `}
             />
             <TextGenerateEffect
               words=" ENGINEERING "
-              className={`${raleway.className}  + font-extrabold text-violet-800   sm:text-4xl md:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-5xl  max-sm:leading-[60px] max-lg:pl-1`}
+              className={`${raleway.className}  + font-extrabold text-violet-800     sm:text-7xl md:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-5xl max-lg:text-white  drop-shadow-xl   max-sm:leading-[60px] max-lg:pl-1`}
             />
             <TextGenerateEffect
               words="  WORKS"
-              className={`${raleway.className}  + font-extrabold text-violet-800   sm:text-4xl md:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-5xl  max-sm:leading-[60px] max-lg:pl-1`}
+              className={`${raleway.className}  + font-extrabold text-violet-800   sm:text-7xl md:text-7xl  max-sm:break-words max-sm:w-screen max-sm:text-5xl max-lg:text-white drop-shadow-xl   max-sm:leading-[60px] max-lg:pl-1`}
             />
 
             <TextGenerateEffect
               words=" We Connect . You Grow"
               className={`${raleway.className}  +
-               mt-7 md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl max-sm:text-xl max-lg:pl-2`}
+               mt-7 md:tracking-wider mb-4 text-sm md:text-lg text-slate-800 max-lg:bg-black-200 p-1 rounded-md drop-shadow-xl max-lg:text-white lg:text-2xl max-sm:text-xl max-lg:pl-2`}
             />
           </div>
         </div>
-      </div>
-      <div className=" flex flex-col items-center justify-center mt-5">
-        <h4 className={`${garamond.className}  + font-semibold text-3xl`}>
-          Our Story.
-        </h4>
-        <p
-          className={`${garamond.className}  + text-xl text-center p-10 max-sm:text-md max-sm:p-2 w-screen`}
-        >
-          SAHARA ENGINEERING WORKS is peoples company which are into
-          construction and interiors services.
-          <br></br>
-          Sahara means to serve (sahara-helping hand) the people with best
-          quality of work in less budget.<br></br>
-          Sahara will never compromise with the quality of work as our Engineers
-          integrity wont allow to do so,<br></br>we take construction and
-          interiors projects ranging from (20 lacs - 3 crore).<br></br>We have
-          25+ Manpower and we handle 4+ projects at a time.Sahara is Located at
-          Margao Goa and we take work geographical in Goa location<br></br> We
-          are contracting services company for residential and commercial
-          buildings.<br></br>We makes your dream house looks beautiful. sahara
-          undertakes civil construction ,<br></br> Electrical ,Plumbing ,
-          Flooring , False ceiling , Fabrication ,Furniture & Painting work.
-        </p>
-        <div className="flex justify-center items-center gap-10">
-          <a
-            href="/contact"
-            className="bg-black text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2 mb-4 shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4"
-          >
-            Contact Us -&gt;
-          </a>
-        </div>
+      </div>{" "}
+      <hr className="  h-2 w-full m-4 p-4 text-black" />
+      <h4
+        className={`${garamond.className}  + font-semibold text-4xl text-center mb-2 mt-4`}
+      >
+        Our Story.
+      </h4>
+      <div className=" flex flex-col items-center justify-center  shadow-xl">
+        <RevealOnScroll>
+          <div className="flex justify-around  w-screen items-center gap-2 max-md:flex-col max-md:w-screen ">
+            <div className="flex flex-col gap-8 px-16 justify-around">
+              <p
+                className={`${garamond.className}  + text-xl text-left px-3 tracking-wide max-sm:text-md max-sm:p-4  max-md:w-screen max-md:text-center`}
+              >
+                SAHARA ENGINEERING WORKS is peoples company which are into
+                construction and interiors services. Sahara means to serve
+                (sahara-helping hand) the people with best quality of work in
+                less budget.<br></br>
+                Sahara will never compromise with the quality of work as our
+                Engineers integrity wont allow to do so,we take construction and
+                interiors projects ranging from (20 lacs - 3 crore).<br></br>We
+                have 25+ Manpower and we handle 4+ projects at a time.Sahara is
+                Located at Margao Goa and we take work geographical in Goa
+                location<br></br> We are contracting services company for
+                residential and commercial buildings.<br></br>We makes your
+                dream house looks beautiful. sahara undertakes civil
+                construction , Electrical ,Plumbing , Flooring , False ceiling ,
+                Fabrication ,Furniture & Painting work.
+              </p>
+              <div className="flex justify-center items-center gap-10"></div>
+            </div>
 
-        <Image
-          src="/heropage.jpg"
-          width={500}
-          height={500}
-          alt="construction"
-          className="flex justify-center items-center  "
-        />
+            <Image
+              src="/heropage.jpg"
+              width={700}
+              height={100}
+              alt="construction"
+              className="flex justify-center items-center  "
+            />
+          </div>
+        </RevealOnScroll>
+        <a
+          href="/contact"
+          className="bg-black text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2 mb-4 shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4"
+        >
+          Contact Us -&gt;
+        </a>
+
         <hr className="  h-2 w-full m-4 p-4 text-black" />
-        <h4 className={`${garamond.className}  + font-semibold text-3xl p-4`}>
+
+        <h4 className={`${garamond.className}  + font-semibold text-4xl`}>
           Why Choose Us..?
         </h4>
-        <p
-          className={`${garamond.className}  + text-xl text-center font-semibold p-4 w-screen`}
-        >
-          We go beyond the ordinary to exceed your expectations , ensuring that
-          every detail is meticulously crafted to perfection.
-        </p>
-        <ul
-          className={`${garamond.className}  + text-lg  p-5 flex flex-col gap-10 mb-2  w-screen max-sm:items-start max-sm:px-10`}
-        >
-          <li className="flex items-center justify-center gap-2">
-            <FaHandPointRight /> Begin with a Mindset of Gratitude
-          </li>
+        <RevealOnScroll>
+          <div className="flex justify-around items-center max-md:flex-col-reverse w-screen px-4 ">
+            <div className="flex flex-col justify-center items-center gap-8 w-screen">
+              <Image
+                src="/whyc.jpg"
+                width={600}
+                height={100}
+                alt="construction"
+                className="flex justify-center items-center   rounded-xl"
+              />
+            </div>
+            <div className="flex flex-col px-8  max-md:w-screen justify-center items-center">
+              <p
+                className={`${garamond.className}  + text-2xl  font-semibold p-2 my-2`}
+              >
+                We go beyond the ordinary to exceed your expectations , ensuring
+                that every detail is meticulously crafted to perfection.
+              </p>
+              <ul
+                className={`${garamond.className}  + text-xl  p-2  flex flex-col items-start gap-5 mb-2   max-sm:items-start max-sm:px-2`}
+              >
+                <li className="flex items-center justify-center gap-2">
+                  <FaHandPointRight /> Begin with a Mindset of Gratitude
+                </li>
 
-          <li className="flex items-center justify-center gap-2">
-            <FaHandPointRight />
-            Meet Expectations, Then Work Hard to Exceed Expectations
-          </li>
-          <li className="flex items-center justify-center gap-2">
-            <FaHandPointRight />
-            Deliver Effective Open and Honest Communication
-          </li>
-          <li className="flex items-center justify-center gap-2">
-            <FaHandPointRight />
-            Client Centric Approach
-          </li>
-          <li className="flex items-center justify-center gap-2">
-            <FaHandPointRight />
-            Quality and Safety
-          </li>
-          <li className="flex items-center justify-center gap-2">
-            <FaHandPointRight />
-            Innovative Solutions
-          </li>
-        </ul>
+                <li className="flex items-center justify-center gap-2">
+                  <FaHandPointRight />
+                  Meet Expectations, Then Work Hard to Exceed Expectations
+                </li>
+                <li className="flex items-center justify-center gap-2">
+                  <FaHandPointRight />
+                  Deliver Effective Open and Honest Communication
+                </li>
+                <li className="flex items-center justify-center gap-2">
+                  <FaHandPointRight />
+                  Client Centric Approach
+                </li>
+                <li className="flex items-center justify-center gap-2">
+                  <FaHandPointRight />
+                  Quality and Safety
+                </li>
+                <li className="flex items-center justify-center gap-2">
+                  <FaHandPointRight />
+                  Innovative Solutions
+                </li>
+              </ul>
+            </div>
+          </div>
+        </RevealOnScroll>
         <a
           href="/services "
-          className="bg-black text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2 mb-4 shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300"
+          className="bg-black w-fit  text-white dark:text-white flex items-center space-x-2 border border-black-200 mx-8 px-4 mt-1 py-2 mb-4 shadow-md rounded-lg  hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300"
         >
           Our Services -&gt;
         </a>

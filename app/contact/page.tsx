@@ -58,7 +58,7 @@ const page = () => {
 
   return (
     <section className="relative   flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className=" bg-[url('/contact.jpg')]  backdrop-blur-xl   bg-cover bg-bottom w-screen h-96  text-center flex justify-center items-center text-5xl   ">
+      <div className=" bg-[url('/contact.jpg')]   backdrop-blur-xl   bg-cover bg-bottom w-screen h-96  text-center flex justify-center items-center text-5xl   ">
         <p
           className={`${raleway.className}  + font-bold opacity-100   relative text-white`}
         >
@@ -71,33 +71,33 @@ const page = () => {
         We&apos;d love to hear from you. <br />
         Please contact us with any questions you may have.
       </h4>
-      <div className="flex flex-row px-10 w-full justify-between  max-lg:px-4 max-lg:flex-col-reverse">
+      <div className="flex flex-row px-10 w-full justify-between  max-lg:px-4 max-lg:flex-col-reverse ">
         <div>
-          <div className="flex justify-start max-md:text-2xl items-start gap-5 my-1 shadow-xs p-5    ">
+          <div className="flex justify-start max-md:text-2xl items-start gap-5 my-1 shadow-xs p-5  lg:mt-24  ">
             <FaLocationPin className="text-blue-500 mt-2" />
             <p className={`${garamond.className}  +    text-xl  `}>
               200/6/B Saccubhat per seraulium colva SERAULIM, <br /> Madgaon,
               Goa 403708.
             </p>
           </div>
-          <div className="flex justify-start max-md:text-2xl items-start gap-5 my-1 shadow-xs p-5  text-3xl">
+          <div className="flex justify-start items-center max-md:text-2xl items-start gap-5 my-1 shadow-xs p-5 max-sm:p-0  text-3xl">
             <MdEmail className=" text-red-500 " />
 
             <span className="text-blue-500 shadow-sm text-lg">
               {" "}
               <a href={`mailto:${"saharaenzineers@gmail.com"}`} target="_blank">
-                saharaenzineers@gmail.com
+                saharaengineeringgoa@gmail.com
               </a>
             </span>
           </div>
-          <div className="flex flex-row  justify-start items-start gap-5 p-5 my-1 text-xl">
+          <div className="flex flex-row  justify-start items-start gap-5 p-5 max-sm:p-2 max-sm:px-4 my-1 text-xl">
             <div className="flex justify-center items-center gap-2">
               <MdCall className=" text-blue-500 text-2xl" />
             </div>
-            <div className="flex gap-2 max-md:flex-col">
-              <a href={`tel:${8208743416}`}>{8208743416}</a> <br />
+            <div className="flex gap-2 flex-wrap max-sm:gap-5">
+              <a href={`tel:${8208743416}`}>{8208743416}</a>
               <a href={`tel:${9763133132}`}>{9763133132}</a>
-              <br />
+
               <a href={`tel:${8007567652}`}>{8007567652}</a>
             </div>
           </div>
@@ -154,39 +154,49 @@ const page = () => {
         <div className="right-side">
           <br />
           {/* 2ndSection */}
+          <h4
+            className={`${garamond.className}  + text-center p-1    text-xl  `}
+          >
+            Send us a message.
+          </h4>
           <form
             onSubmit={handleSubmit}
             className="flex flex-col border  justify-center items-center gap-5 py-10 px-5 my-1 rounded-lg shadow-xl max-sm:px-1"
           >
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
-            <div className="flex justify-between gap-2 px-2 items-center w-[40vw] max-sm:w-full max-sm:flex-col">
-              <label>Name : </label>
+            <div className="flex justify-between flex-col gap-2 px-2 items-start w-[40vw] max-sm:w-full max-sm:flex-col">
+              <label className="text-blue-500 font-semibold">Name* </label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                placeholder="Enter your name"
                 required
-                className="border border-black-200 rounded-sm w-[20vw] p-1 max-sm:w-full"
+                className="border border-black-100 rounded-sm w-full p-2 max-sm:w-full"
               />
             </div>
-            <div className="flex justify-between gap-2 px-2 items-center w-[40vw] max-sm:w-full max-sm:flex-col ">
-              <label>Contact Number : </label>
+            <div className="flex flex-col justify-between gap-2 px-2 items-start w-[40vw] max-sm:w-full max-sm:flex-col ">
+              <label className="text-blue-500 font-semibold">
+                Contact Number*{" "}
+              </label>
               <input
                 type="number"
                 value={contactNumber}
+                placeholder="Enter your contact number"
                 onChange={(e) => setContactNumber(e.target.value)}
                 required
-                className="border border-black-200 rounded-sm w-[20vw] p-1 max-sm:w-full"
+                className="border border-black-100 rounded-sm w-full p-2 max-sm:w-full"
               />
             </div>
-            <div className="flex justify-between gap-2 px-2 items-center w-[40vw] max-sm:w-full max-sm:flex-col">
-              <label>Message : </label>
+            <div className="flex justify-between flex-col gap-2 px-2 items-start w-[40vw] max-sm:w-full max-sm:flex-col">
+              <label className="text-blue-500 font-semibold">Message* </label>
               <textarea
                 value={message}
+                placeholder="Enter Your Message Here"
                 onChange={(e) => setMessage(e.target.value)}
                 required
-                className="border border-black-200 rounded-sm w-[20vw] h-[30vh] p-1 max-sm:w-full"
+                className="border border-black-100 rounded-sm w-full h-[30vh] p-2 max-sm:w-full"
               ></textarea>
             </div>
 

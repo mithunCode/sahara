@@ -42,7 +42,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("", className)}>
       <div className="">
-        <div className=" tracking-wide break-words drop-shadow-xl ">
+        <div className=" tracking-wide break-words drop-shadow-xl  ">
           {renderWords()}
         </div>
       </div>

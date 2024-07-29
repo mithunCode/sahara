@@ -10,7 +10,7 @@ const garamond = EB_Garamond({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main className="relative   flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className=" bg-[url('/galleryBg.png')]     bg-cover bg-bottom w-screen h-96  text-center flex justify-center items-center text-5xl   ">
+      <div className=" bg-[url('/galleryBg.png')]   bg-cover bg-bottom w-screen h-96  text-center flex justify-center items-center text-5xl   ">
         <p
           className={`${raleway.className}  + font-bold opacity-100   relative text-white`}
         >
@@ -18,7 +18,9 @@ export default function Home() {
         </p>
       </div>
       <div className="flex justify-center flex-col items-center  w-full p-10">
-        <p className={`${garamond.className} + text-center text-xl p-8  `}>
+        <p
+          className={`${garamond.className} + text-center text-xl p-8 max-md:p-2 my-4  `}
+        >
           Sahara Engineering Works has proven experience on a wide range of
           projects. <br />
           Every detail of these projects is the most important detail to us.{" "}
