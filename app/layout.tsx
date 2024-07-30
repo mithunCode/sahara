@@ -5,6 +5,7 @@ import "./globals.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 
 const inter = Inter({ subsets: ["latin"] });
 const raleway = Raleway({ subsets: ["latin"] });
@@ -42,6 +43,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <FloatingNav navItems={navItems} />
+        <MobileNav />
         {children}
         <Footer />
       </body>
