@@ -148,7 +148,7 @@ const Hero = () => {
           {images.map((src, index) => (
             <div key={index} className="w-screen h-screen">
               <img
-                className="w-screen h-screen "
+                className="w-screen h-screen object-cover "
                 src={src}
                 alt={`Background ${index + 1}`}
               />
