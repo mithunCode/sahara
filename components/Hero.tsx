@@ -77,7 +77,7 @@ const Testimonial = ({ testimonial }: any) => {
 
   return (
     <div
-      className="flex flex-col justify-between bg-opacity-90 p-8 w-full rounded-lg shadow-lg text-center h-96 max-sm:h-72 "
+      className="flex flex-col justify-between bg-opacity-90 p-8 w-full rounded-lg shadow-lg text-center h-96 "
       style={{
         background:
           "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
@@ -146,9 +146,9 @@ const Hero = () => {
           className="absolute inset-0 z-0 w-full h-full"
         >
           {images.map((src, index) => (
-            <div key={index} className="w-full h-full">
+            <div key={index} className="w-screen h-screen">
               <img
-                className="w-full h-full object-cover"
+                className="w-screen h-screen "
                 src={src}
                 alt={`Background ${index + 1}`}
               />
