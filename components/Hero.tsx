@@ -10,6 +10,7 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { FaHandPointRight } from "react-icons/fa6";
 import { Carousel } from "react-responsive-carousel";
 import { useState } from "react";
+import CircleCounter from "./CircleCounter";
 const raleway = Raleway({ subsets: ["latin"] });
 const garamond = EB_Garamond({ subsets: ["latin"] });
 const testimonials = [
@@ -175,76 +176,104 @@ const Hero = () => {
           </p>
         </div>
       </main>
-      <hr className="  h-2 w-full m-4 p-4 text-black" />
-      <h4
-        className={`${garamond.className}  + font-semibold text-4xl text-center mb-2 mt-4`}
-      >
-        Our Story.
-      </h4>
-      <div className=" flex flex-col items-center justify-center  shadow-xl">
+
+      <div className="bg-[#48cae4] py-10 shadow-lg">
+        <h4
+          className={`${garamond.className}  + font-semibold text-4xl text-center mb-2 `}
+        >
+          Our Story.
+        </h4>
+        <div className=" flex flex-col items-center justify-center  shadow-xl">
+          <RevealOnScroll>
+            <div className="flex justify-around  w-screen items-center gap-2 max-md:flex-col max-md:w-screen px-8  ">
+              <div className="flex flex-col gap-8 px-16 justify-around items-start">
+                <p
+                  className={`${garamond.className}  + text-xl font-light text-left  tracking-wide max-sm:text-md max-sm:p-4  max-md:w-screen max-md:text-center rounded-lg p-5 mt-8 `}
+                >
+                  Welcome to SAHARA Engineering Works, where people come first.
+                  As a trusted construction and interior services company in
+                  Goa, we're dedicated to supporting our clients every step of
+                  the way. Our name 'SAHARA' represents our promise to deliver
+                  top-notch quality work within reasonable budgets, ensuring
+                  your vision becomes a reality. With a talented team of 25+
+                  skilled professionals, we expertly manage multiple projects
+                  simultaneously, never compromising on excellence. Our
+                  commitment to reliability, client satisfaction, and
+                  exceptional craftsmanship makes us the go-to choice for those
+                  seeking superior construction solutions. <br></br>
+                  <br></br>
+                  From enhancing residential spaces to commercial complexes and
+                  industrial projects, SAHARA tailors our expertise to meet the
+                  unique needs of every project. We pride ourselves on:
+                  <br></br>- Unparalleled craftsmanship <br></br> - Service
+                  excellence<br></br> - Personalized solutions<br></br> - Timely
+                  delivery <br></br>- Reasonable budgets<br></br>
+                  <br></br> At SAHARA, we're more than just a construction
+                  company – we're your partners in building your dreams. Let us
+                  help you create spaces that inspire and thrive."
+                </p>
+                <div className="flex justify-center items-center gap-10"></div>
+              </div>
+
+              <Image
+                src="/homepage/about.jpg"
+                width={500}
+                height={100}
+                alt="construction"
+                className="flex justify-center bg-cover items-center rounded-lg shadow-xl m-2 "
+              />
+            </div>
+          </RevealOnScroll>
+          <a
+            href="/contact"
+            className="bg-black mt-4 text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2  shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4 my-4"
+          >
+            Contact Us -&gt;
+          </a>
+        </div>
         <RevealOnScroll>
-          <div className="flex justify-around  w-screen items-center gap-2 max-md:flex-col max-md:w-screen px-8  bg-blue-50">
-            <div className="flex flex-col gap-8 px-16 justify-around items-start">
-              <p
-                className={`${garamond.className}  + text-xl text-left  tracking-wide max-sm:text-md max-sm:p-4  max-md:w-screen max-md:text-center rounded-lg p-5 mt-8 `}
-              >
-                Welcome to SAHARA Engineering Works, where people come first. As
-                a trusted construction and interior services company in Goa,
-                we're dedicated to supporting our clients every step of the way.
-                Our name 'SAHARA' represents our promise to deliver top-notch
-                quality work within reasonable budgets, ensuring your vision
-                becomes a reality. With a talented team of 25+ skilled
-                professionals, we expertly manage multiple projects
-                simultaneously, never compromising on excellence. Our commitment
-                to reliability, client satisfaction, and exceptional
-                craftsmanship makes us the go-to choice for those seeking
-                superior construction solutions. <br></br>
-                <br></br>
-                From enhancing residential spaces to commercial complexes and
-                industrial projects, SAHARA tailors our expertise to meet the
-                unique needs of every project. We pride ourselves on:
-                <br></br>- Unparalleled craftsmanship <br></br> - Service
-                excellence<br></br> - Personalized solutions<br></br> - Timely
-                delivery <br></br>- Reasonable budgets<br></br>
-                <br></br> At SAHARA, we're more than just a construction company
-                – we're your partners in building your dreams. Let us help you
-                create spaces that inspire and thrive."
-              </p>
-              <div className="flex justify-center items-center gap-10"></div>
+          <div className="bg-[#90e0ef] flex justify-center items-center flex-col py-10">
+            <h4
+              className={`${garamond.className}  + font-semibold text-4xl py-3 w-full text-center `}
+            >
+              Our Projects.
+            </h4>
+            <p
+              className={`${garamond.className}  + text-xl text-left  tracking-wide max-sm:text-md max-sm:p-4  max-md:w-screen max-md:text-center rounded-lg p-5 my-4 `}
+            >
+              Proven experience on a wide range of projects. Every detail of
+              these projects is the most important detail to us.
+            </p>
+
+            <div className="w-screen flex justify-around items-center max-sm:flex-col gap-4 py-4 ">
+              <CircleCounter targetNumber={90} pType="Completed" />
+              <CircleCounter targetNumber={30} pType="Ongoing" />
             </div>
 
-            <Image
-              src="/homepage/about.jpg"
-              width={500}
-              height={100}
-              alt="construction"
-              className="flex justify-center bg-cover items-center rounded-lg shadow-xl m-2 "
-            />
+            <a
+              href="/gallery"
+              className=" bg-black mt-4 w-fit text-center text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2 mb-4 shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4"
+            >
+              Project Gallery -&gt;
+            </a>
           </div>
         </RevealOnScroll>
-        <a
-          href="/contact"
-          className="bg-black mt-4 text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2 mb-4 shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4"
-        >
-          Contact Us -&gt;
-        </a>
-
-        <hr className="  h-2 w-full m-4 p-4 text-black" />
-
-        <h4
-          className={`${garamond.className}  + font-semibold text-4xl py-3 w-full text-center bg-yellow-50`}
-        >
-          Why Choose Us..?
-        </h4>
-        <p
-          className={`${garamond.className}  + text-xl bg-yellow-50 text-wrap break-words w-screen text-center  font-semibold p-2 py-8 `}
-        >
-          At [Sahara Engineering Works], we pride ourselves on our commitment to
-          excellence, integrity, and customer satisfaction. Here's what sets us
-          apart:
-        </p>
+        <div className="bg-[#ade8f4]">
+          <h4
+            className={`${garamond.className}  + font-semibold text-4xl py-3 w-full text-center `}
+          >
+            Why Choose Us..?
+          </h4>
+          <p
+            className={`${garamond.className}  + text-xl  text-wrap break-words w-screen text-center  font-semibold p-2 py-8 `}
+          >
+            At [Sahara Engineering Works], we pride ourselves on our commitment
+            to excellence, integrity, and customer satisfaction. Here's what
+            sets us apart:
+          </p>
+        </div>
         <RevealOnScroll>
-          <div className="flex justify-around items-start gap-6 max-md:flex-col-reverse w-screen px-16 max-sm:px-1 py-4 bg-yellow-50">
+          <div className="flex justify-around items-start gap-6 max-md:flex-col-reverse w-screen px-16 max-sm:px-1 py-4 bg-[#ade8f4]">
             <div className="flex flex-col justify-center items-center gap-8 w-screen p-2">
               <Image
                 src="/homepage/whymain.jpg"
@@ -342,40 +371,40 @@ const Hero = () => {
             </div>
           </div>
         </RevealOnScroll>
+        <div className="text-center py-10 bg-[#caf0f8]">
+          <h4 className={`${garamond.className}  + font-semibold text-3xl `}>
+            What Our Clients Are Saying..
+          </h4>
 
-        <hr className="  h-2 w-full m-4 p-4 text-black" />
-        <h4 className={`${garamond.className}  + font-semibold text-3xl `}>
-          What Our Clients Are Saying..
-        </h4>
-
-        {/* <InfiniteMovingCards
+          {/* <InfiniteMovingCards
           items={testimonials}
           direction="right"
           speed="slow"
         /> */}
-        <section className="relative z-20 mt-2 w-full max-w-4xl mx-auto px-4 mb-10 max-sm:w-screen max-sm:h-full">
-          <div className="relative z-20 mt-12 w-full max-w-4xl mx-auto px-4">
-            <Carousel
-              showArrows={true}
-              showThumbs={false}
-              infiniteLoop
-              autoPlay
-              interval={5000}
-              transitionTime={1000}
-              renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                hasPrev && <CustomPrevArrow onClick={onClickHandler} />
-              }
-              renderArrowNext={(onClickHandler, hasNext, label) =>
-                hasNext && <CustomNextArrow onClick={onClickHandler} />
-              }
-              className="w-full"
-            >
-              {testimonials.map((testimonial, index) => (
-                <Testimonial key={index} testimonial={testimonial} />
-              ))}
-            </Carousel>
-          </div>
-        </section>
+          <section className="relative z-20 mt-2 w-full max-w-4xl mx-auto px-4 mb-10 max-sm:w-screen max-sm:h-full">
+            <div className="relative z-20 mt-12 w-full max-w-4xl mx-auto px-4">
+              <Carousel
+                showArrows={true}
+                showThumbs={false}
+                infiniteLoop
+                autoPlay
+                interval={5000}
+                transitionTime={1000}
+                renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                  hasPrev && <CustomPrevArrow onClick={onClickHandler} />
+                }
+                renderArrowNext={(onClickHandler, hasNext, label) =>
+                  hasNext && <CustomNextArrow onClick={onClickHandler} />
+                }
+                className="w-full"
+              >
+                {testimonials.map((testimonial, index) => (
+                  <Testimonial key={index} testimonial={testimonial} />
+                ))}
+              </Carousel>
+            </div>
+          </section>
+        </div>
       </div>
     </section>
   );

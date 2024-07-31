@@ -91,3 +91,23 @@
 .carousel .control-prev.control-arrow::before {
   border-right: 8px solid yellow;
 }
+
+/* Add this CSS to your styles */
+.circle-counter {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #48cae4; /* Green background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  font-size: 2em;
+  color: white;
+}
+
+.number-counter {
+  font-size: 3em;
+  font-weight: bold;
+}
