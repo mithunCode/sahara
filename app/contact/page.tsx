@@ -257,7 +257,7 @@ const page = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
-              rows="6"
+              rows={6}
               className="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]"
             ></textarea>
             <button
