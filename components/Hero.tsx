@@ -3,14 +3,13 @@
 "use client";
 
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
-import { RevealOnScroll } from "../components/RevealOnScroll";
 import { EB_Garamond, Raleway } from "next/font/google";
 import Image from "next/image";
-import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 import { FaHandPointRight } from "react-icons/fa6";
 import { Carousel } from "react-responsive-carousel";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CircleCounter from "./CircleCounter";
+import RevealOnScroll from "./RevealOnScroll";
 const raleway = Raleway({ subsets: ["latin"] });
 const garamond = EB_Garamond({ subsets: ["latin"] });
 const testimonials = [
@@ -66,10 +65,10 @@ const testimonials = [
   },
 ];
 const images = [
-  "/homepage/bg.jpg",
-  "/homepage/sl2.jpg",
-  "/galleryImages/7.jpg",
-  "/galleryImages/16.jpg",
+  "/homepage/img1.jpg",
+  "/homepage/img2.jpg",
+  "/homepage/img3.jpg",
+  "/homepage/img4.jpg",
 ];
 
 const Testimonial = ({ testimonial }: any) => {
@@ -115,6 +114,7 @@ const Testimonial = ({ testimonial }: any) => {
     </div>
   );
 };
+
 const Hero = () => {
   const CustomPrevArrow = ({ onClick }: any) => (
     <button
@@ -183,8 +183,8 @@ const Hero = () => {
         >
           Our Story.
         </h4>
-        <div className=" flex flex-col items-center justify-center  shadow-xl">
-          <RevealOnScroll>
+        <RevealOnScroll>
+          <div className=" flex flex-col items-center justify-center  shadow-xl">
             <div className="flex justify-around  w-screen items-center gap-2 max-md:flex-col max-md:w-screen px-8  ">
               <div className="flex flex-col gap-8 px-16 justify-around items-start">
                 <p
@@ -223,14 +223,15 @@ const Hero = () => {
                 className="flex justify-center bg-cover items-center rounded-lg shadow-xl m-2 "
               />
             </div>
-          </RevealOnScroll>
-          <a
-            href="/contact"
-            className="bg-black mt-4 text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2  shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4 my-4"
-          >
-            Contact Us -&gt;
-          </a>
-        </div>
+
+            <a
+              href="/contact"
+              className="bg-black mt-4 text-white dark:text-white flex items-center space-x-2 border border-black-200 px-4 py-2  shadow-md rounded-lg hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300 max-sm:m-4 my-4"
+            >
+              Contact Us -&gt;
+            </a>
+          </div>
+        </RevealOnScroll>
         <RevealOnScroll>
           <div className="bg-[#90e0ef] flex justify-center items-center flex-col py-10">
             <h4
@@ -258,153 +259,139 @@ const Hero = () => {
             </a>
           </div>
         </RevealOnScroll>
-        <div className="bg-[#ade8f4]">
-          <h4
-            className={`${garamond.className}  + font-semibold text-4xl py-3 w-full text-center `}
-          >
-            Why Choose Us..?
-          </h4>
-          <p
-            className={`${garamond.className}  + text-xl  text-wrap break-words w-screen text-center  font-semibold p-2 py-8 `}
-          >
-            At [Sahara Engineering Works], we pride ourselves on our commitment
-            to excellence, integrity, and customer satisfaction. Here's what
-            sets us apart:
-          </p>
-        </div>
         <RevealOnScroll>
-          <div className="flex justify-around items-start gap-6 max-md:flex-col-reverse w-screen px-16 max-sm:px-1 py-4 bg-[#ade8f4]">
-            <div className="flex flex-col justify-center items-center gap-8 w-screen p-2">
-              <Image
-                src="/homepage/whymain.jpg"
-                width={600}
-                height={100}
-                alt="construction"
-                className="flex justify-center items-center mr-2  rounded-xl"
-              />
-              <p className="my-5">
-                By choosing [Sahara Engineering Works], you can trust that your
-                project is in good hands. Contact us today to discuss your
-                construction needs!
-              </p>
-              <a
-                href="/services "
-                className="bg-black w-fit  text-white dark:text-white flex items-center space-x-2 border border-black-200 mx-8 px-4 py-2  shadow-md rounded-lg  hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300"
-              >
-                Our Services -&gt;
-              </a>
-            </div>
-
-            <div className=" flex flex-col text-black-700  rounded-lg    max-md:w-screen justify-center items-center ">
-              <ul
-                className={`${garamond.className}  + tracking-wide text-lg  p-2 pb-10  flex flex-col items-start gap-5 mb-2   max-sm:items-start max-sm:px-2`}
-              >
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    {" "}
-                    <b>Experience:</b> With [10+] years of experience in the
-                    construction industry, our team has the expertise to handle
-                    any project, big or small.
-                  </p>{" "}
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    <b>Quality:</b> We use only the highest-quality materials
-                    and latest technologies to ensure our projects meet the
-                    highest standards.
-                  </p>{" "}
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    <b>Safety:</b> Safety is our top priority. Our team is
-                    trained to follow strict safety protocols to ensure a secure
-                    working environment.
-                  </p>{" "}
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    <b>Customer Service:</b> We listen to our clients' needs and
-                    work closely with them to deliver personalized solutions.
-                  </p>{" "}
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    <b>Innovation:</b> We stay up-to-date with the latest
-                    industry trends and innovations to provide cutting-edge
-                    solutions.
-                  </p>{" "}
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    <b>Reliability:</b> We deliver projects onu time, within
-                    budget, and to the highest quality standards.
-                  </p>{" "}
-                </li>
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    <b>Sustainability:</b> We prioritize sustainable practices
-                    to minimize our environmental footprint.
-                  </p>{" "}
-                </li>{" "}
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    <b>Certifications:</b> We hold [certifications/licenses] to
-                    ensure our work meets regulatory standards.
-                  </p>{" "}
-                </li>{" "}
-                <li className="flex items-center justify-center gap-2">
-                  <FaHandPointRight />
-                  <p>
-                    <b>Testimonials:</b> Our clients rave about our work. Check
-                    out our testimonials to see what they say!
-                  </p>{" "}
-                </li>
-              </ul>
-            </div>
+          <div className="bg-[#ade8f4]">
+            <h4
+              className={`${garamond.className}  + font-semibold text-4xl py-3 w-full text-center `}
+            >
+              Why Choose Us..?
+            </h4>
+            <p
+              className={`${garamond.className}  + text-xl  text-wrap break-words w-screen text-center  font-semibold p-2 py-8 `}
+            >
+              At [Sahara Engineering Works], we pride ourselves on our
+              commitment to excellence, integrity, and customer satisfaction.
+              Here's what sets us apart:
+            </p>
           </div>
         </RevealOnScroll>
-        <div className="text-center py-10 bg-[#caf0f8]">
-          <h4 className={`${garamond.className}  + font-semibold text-3xl `}>
-            What Our Clients Are Saying..
-          </h4>
+        <div className="flex justify-around items-start gap-6 max-md:flex-col-reverse w-screen px-16 max-sm:px-1 py-4 bg-[#ade8f4]">
+          <div className="flex flex-col justify-center items-center gap-8 w-screen p-2">
+            <Image
+              src="/homepage/whymain.jpg"
+              width={600}
+              height={100}
+              alt="construction"
+              className="flex justify-center items-center mr-2  rounded-xl"
+            />
+            <p className="my-5">
+              By choosing [Sahara Engineering Works], you can trust that your
+              project is in good hands. Contact us today to discuss your
+              construction needs!
+            </p>
+            <a
+              href="/services "
+              className="bg-black w-fit  text-white dark:text-white flex items-center space-x-2 border border-black-200 mx-8 px-4 py-2  shadow-md rounded-lg  hover:bg-slate-100 hover:text-slate-800 hover:border-blue-300"
+            >
+              Our Services -&gt;
+            </a>
+          </div>
 
-          {/* <InfiniteMovingCards
+          <div className=" flex flex-col text-black-700  rounded-lg    max-md:w-screen justify-center items-center ">
+            <ul
+              className={`${garamond.className}  + tracking-wide text-lg  p-2 pb-10  flex flex-col items-start gap-5 mb-2   max-sm:items-start max-sm:px-2`}
+            >
+              <li className="flex items-center justify-center gap-2">
+                <FaHandPointRight />
+                <p>
+                  {" "}
+                  <b>Experience:</b> With [10+] years of experience in the
+                  construction industry, our team has the expertise to handle
+                  the project.
+                </p>{" "}
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <FaHandPointRight />
+                <p>
+                  <b>Quality:</b> We use only the quality materials and
+                  technologies to ensure our projects meet the standards.
+                </p>{" "}
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <FaHandPointRight />
+                <p>
+                  <b>Safety:</b> Safety is our priority. Our team is trained to
+                  follow safety protocols to ensure a secure working
+                  environment.
+                </p>{" "}
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <FaHandPointRight />
+                <p>
+                  <b>Customer Service:</b> We listen to our clients' needs and
+                  work closely with them to deliver personalized solutions.
+                </p>{" "}
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <FaHandPointRight />
+                <p>
+                  <b>Innovation:</b> We stay up-to-date with the latest industry
+                  trends and innovations to provide cutting-edge solutions.
+                </p>{" "}
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <FaHandPointRight />
+                <p>
+                  <b>Reliability:</b>We deliver projects on time, within budget,
+                  and to the highest quality standards.
+                </p>{" "}
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <FaHandPointRight />
+                <p>
+                  <b>Sustainability:</b> We prioritize sustainable practices to
+                  minimize our environmental footprint.
+                </p>{" "}
+              </li>{" "}
+            </ul>
+          </div>
+        </div>
+        <RevealOnScroll>
+          <div className="text-center py-10 bg-[#caf0f8]">
+            <h4 className={`${garamond.className}  + font-semibold text-3xl `}>
+              What Our Clients Are Saying..
+            </h4>
+
+            {/* <InfiniteMovingCards
           items={testimonials}
           direction="right"
           speed="slow"
         /> */}
-          <section className="relative z-20 mt-2 w-full max-w-4xl mx-auto px-4 mb-10 max-sm:w-screen max-sm:h-full">
-            <div className="relative z-20 mt-12 w-full max-w-4xl mx-auto px-4">
-              <Carousel
-                showArrows={true}
-                showThumbs={false}
-                infiniteLoop
-                autoPlay
-                interval={5000}
-                transitionTime={1000}
-                renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                  hasPrev && <CustomPrevArrow onClick={onClickHandler} />
-                }
-                renderArrowNext={(onClickHandler, hasNext, label) =>
-                  hasNext && <CustomNextArrow onClick={onClickHandler} />
-                }
-                className="w-full"
-              >
-                {testimonials.map((testimonial, index) => (
-                  <Testimonial key={index} testimonial={testimonial} />
-                ))}
-              </Carousel>
-            </div>
-          </section>
-        </div>
+            <section className="relative z-20 mt-2 w-full max-w-4xl mx-auto px-4 mb-10 max-sm:w-screen max-sm:h-full">
+              <div className="relative z-20 mt-12 w-full max-w-4xl mx-auto px-4">
+                <Carousel
+                  showArrows={true}
+                  showThumbs={false}
+                  infiniteLoop
+                  autoPlay
+                  interval={5000}
+                  transitionTime={1000}
+                  renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                    hasPrev && <CustomPrevArrow onClick={onClickHandler} />
+                  }
+                  renderArrowNext={(onClickHandler, hasNext, label) =>
+                    hasNext && <CustomNextArrow onClick={onClickHandler} />
+                  }
+                  className="w-full"
+                >
+                  {testimonials.map((testimonial, index) => (
+                    <Testimonial key={index} testimonial={testimonial} />
+                  ))}
+                </Carousel>
+              </div>
+            </section>
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

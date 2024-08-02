@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, email, message } = req.body;
+    const { name, userEmail, contactNumber, message } = req.body;
 
     const transporter = nodemailer.createTransport({
       service: "gmail", // You can use any email service
@@ -16,8 +16,8 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: name,
       to: process.env.EMAIL_USER,
-      subject: `Contact Form Submission from ${name}`,
-      text: message,
+      subject: `Contact Form Submission from ${name} `,
+      text: `Name: ${name}\nEmail: ${userEmail}\nPhone: ${contactNumber}\nMessage: ${message}`,
     };
 
     try {

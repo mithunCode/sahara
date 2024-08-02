@@ -13,6 +13,7 @@ const projects = [
     description:
       " Civil construction right from Designing perfect layout , 3D model , construction to final handover",
     link: "/serviceImages/civil.jpg",
+    cost: "XXX",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const projects = [
     description:
       "All kinds of electrical work example laying of cables , Installation of panel , installation of light fixtures, other appliances etc.",
     link: "/serviceImages/electrician.jpg",
+    cost: "XXX",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const projects = [
     description:
       "We  provide MS, GI , SS etc and all kind of fabrication work like Cupboard , Railing , steps , roof , gate , partition ,parking etc",
     link: "/serviceImages/fabrication.jpg",
+    cost: "XXX",
   },
   {
     id: 4,
@@ -34,19 +37,23 @@ const projects = [
     description:
       "Installation and repair of all kinds of aluminum/glass work like windows, partition , roof work , sliding doors , GMP doors etc",
     link: "/serviceImages/glass.jpg",
+    cost: "XXX",
   },
+
   {
     id: 5,
     title: "Flooring Work",
     description:
       "Sahara engineering works include tiling work , Granite work ,Kota , kadappa, Epoxy work and  all kind of flooring work",
     link: "/serviceImages/flooring.jpg",
+    cost: "XXX",
   },
   {
     id: 6,
     title: "Plumbing Work",
     description: "Installation and repair of all sorts of plumbing work ",
     link: "/serviceImages/plumbing.jpg",
+    cost: "XXX",
   },
   {
     id: 7,
@@ -54,13 +61,15 @@ const projects = [
     description:
       "Sahara engineers provide  different types of wall partition / False Ceilings which includes - Gypsum Board , Hilux board , MR board, Wooden Ceiling, PVC Ceiling, V board.",
     link: "/serviceImages/ceiling.jpeg",
+    cost: "XXX",
   },
   {
     id: 8,
     title: "Furnitures",
     description:
       "Modern Furnitures designs that will go great with any modern or western decor. Furnitures choose earthier elements such as wood, natural wood veneers and warmer metals. For the colour palette select warm neutrals to create an inviting and cosy feeling. The lines of the cabinet need to be elegant and fuss free, making for an inviting space that is uncluttered and calm.",
-    link: "/serviceImages/furniture.jpg",
+    link: "/serviceImages/furniture.jpg ",
+    cost: "XXX",
   },
   {
     id: 9,
@@ -68,13 +77,39 @@ const projects = [
     description:
       "Modular Kitchen is a term used for the modern kitchen furniture layout consisting of modules of cabinets made of diversified materials which hold accessories inside, several modules in a row starting from drawers to cabinets, shelves, racks, kitchen counters, etc.",
     link: "/serviceImages/kitchen.jpg",
+    cost: "XXX",
   },
   {
     id: 10,
     title: "Painting",
     description:
       "We have Commercial  & Residential Painters near you for all types of painting services like Interior , Exterior , Texture - (Royal play ,stucco , antico ) ,Multicolour art , Stencil , 3D wall painting. We also design and provide wall papers.",
-    link: "/serviceImages/painting.jpeg",
+    link: "/serviceImages/painting.jpeg ",
+    cost: "XXX",
+  },
+  {
+    id: 11,
+    title: "Building Renovation",
+    description:
+      "We specialize in bringing new life to old structures through our comprehensive building renovation services. Whether it's a residential home, commercial property, or historical building, our expert team is dedicated to enhancing the functionality, aesthetic appeal, and value of your property.",
+    link: "/serviceImages/renovation.jpg",
+    cost: "XXX",
+  },
+  {
+    id: 12,
+    title: "Building Maintenance",
+    description:
+      "Maintaining the integrity and functionality of your property is essential for its long-term performance and value. At Sahara Engineering Works, we offer a full suite of building maintenance services designed to keep your residential, commercial, or industrial property in peak condition.",
+    link: "/serviceImages/maintenance.jpg",
+    cost: "XXX",
+  },
+  {
+    id: 13,
+    title: "Architectural Design",
+    description:
+      " Our architectural design services are dedicated to transforming your vision into reality with creativity, precision, and expertise. Whether you're planning a residential home, commercial building, or public space, our team of skilled architects and designers is here to bring your project to life.",
+    link: "/serviceImages/design.jpg",
+    cost: "XXX",
   },
 ];
 
@@ -98,7 +133,7 @@ const page = () => {
         <p
           className={`${raleway.className}  + font-bold opacity-100   relative text-white`}
         >
-          Pricing.
+          Estimation.
         </p>
       </div>
       {priceToShow ? (
@@ -122,7 +157,7 @@ const page = () => {
               </p>
               <div className="flex flex-col items-start gap-5 py-10 justify-between max-lg:flex-row">
                 <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                  Rs.XXX
+                  RS.{priceToShow?.cost}
                 </span>
                 <a
                   href="/contact"
@@ -160,7 +195,7 @@ const page = () => {
           </div>
         </>
       )}
-      );
+
       {/* })} */}
       {/* <div className="flex justify-center items-center my-10 px-10">
         <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow lg:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 ">
