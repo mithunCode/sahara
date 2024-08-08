@@ -155,17 +155,7 @@ const page = () => {
   const closeGallery = () => {
     setIsModalOpen(false);
   };
-  const showNextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
 
-  const showPreviousImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
   const CustomPrevArrow = ({ onClick }: any) => (
     <button
       onClick={onClick}
@@ -298,7 +288,7 @@ const page = () => {
                     hasNext && <CustomNextArrow onClick={onClickHandler} />
                   }
                 >
-                  {imgGal.images.map((image, index) => (
+                  {imgGal.images.map((image: any, index: any) => (
                     <div key={index}>
                       <img
                         src={image}
