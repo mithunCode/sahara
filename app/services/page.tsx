@@ -11,6 +11,27 @@ const projects = [
     link: "/serviceImages/civil.jpg",
   },
   {
+    id: 11,
+    title: "Building Renovation",
+    description:
+      "We specialize in bringing new life to old structures through our comprehensive building renovation services. Whether it's a residential home, commercial property, or historical building, our expert team is dedicated to enhancing the functionality, aesthetic appeal, and value of your property.",
+    link: "/serviceImages/renovation.jpg",
+  },
+  {
+    id: 12,
+    title: "Building Maintenance",
+    description:
+      "Maintaining the integrity and functionality of your property is essential for its long-term performance and value. At Sahara Engineering Works, we offer a full suite of building maintenance services designed to keep your residential, commercial, or industrial property in peak condition.",
+    link: "/serviceImages/maintenance.jpg",
+  },
+  {
+    id: 13,
+    title: "Architectural Design",
+    description:
+      " Our architectural design services are dedicated to transforming your vision into reality with creativity, precision, and expertise. Whether you're planning a residential home, commercial building, or public space, our team of skilled architects and designers is here to bring your project to life.",
+    link: "/serviceImages/design.jpg",
+  },
+  {
     id: 2,
     title: "Electrical Work",
     description:
@@ -71,27 +92,6 @@ const projects = [
     description:
       "We have Commercial  & Residential Painters near you for all types of painting services like Interior , Exterior , Texture - (Royal play ,stucco , antico ) ,Multicolour art , Stencil , 3D wall painting. We also design and provide wall papers.",
     link: "/serviceImages/painting.jpeg",
-  },
-  {
-    id: 11,
-    title: "Building Renovation",
-    description:
-      "We specialize in bringing new life to old structures through our comprehensive building renovation services. Whether it's a residential home, commercial property, or historical building, our expert team is dedicated to enhancing the functionality, aesthetic appeal, and value of your property.",
-    link: "/serviceImages/renovation.jpg",
-  },
-  {
-    id: 12,
-    title: "Building Maintenance",
-    description:
-      "Maintaining the integrity and functionality of your property is essential for its long-term performance and value. At Sahara Engineering Works, we offer a full suite of building maintenance services designed to keep your residential, commercial, or industrial property in peak condition.",
-    link: "/serviceImages/maintenance.jpg",
-  },
-  {
-    id: 13,
-    title: "Architectural Design",
-    description:
-      " Our architectural design services are dedicated to transforming your vision into reality with creativity, precision, and expertise. Whether you're planning a residential home, commercial building, or public space, our team of skilled architects and designers is here to bring your project to life.",
-    link: "/serviceImages/design.jpg",
   },
 ];
 

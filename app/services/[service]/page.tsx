@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import { EB_Garamond, Raleway } from "next/font/google";
@@ -6,6 +7,9 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 const raleway = Raleway({ subsets: ["latin"] });
 const garamond = EB_Garamond({ subsets: ["latin"] });
+import Modal from "react-modal";
+import "../../../app/globals.css";
+import { Carousel } from "react-responsive-carousel";
 const projects = [
   {
     id: 1,
@@ -113,10 +117,12 @@ const projects = [
   },
 ];
 
+import projectsData from "../../../pages/api/projects";
 const page = () => {
   let { service } = useParams() as any;
 
   let [priceToShow, setPriceToShow] = useState() as any;
+  let [imgGal, setImgGal] = useState() as any;
 
   if (!service) {
     return <p>Loading...</p>;
@@ -126,7 +132,61 @@ const page = () => {
     console.log(service);
     projects.map((item: any) => item.id == service && setPriceToShow(item));
   }, [service]);
-  console.log(priceToShow);
+  useEffect(() => {
+    projectsData.map(
+      (item: any) => item.name == priceToShow?.title && setImgGal(item)
+    );
+  }, [priceToShow]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+  const openGallery = (project: any) => {
+    setIsModalOpen(true);
+  };
+
+  const closeGallery = () => {
+    setIsModalOpen(false);
+  };
+  const showNextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const showPreviousImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+  const CustomPrevArrow = ({ onClick }: any) => (
+    <button
+      onClick={onClick}
+      className="absolute left-0 top-1/2 transform -translate-y-1/2 p-3 w-5 py-3 bg-black bg-opacity-60  text-white rounded-full"
+      style={{ zIndex: 2 }}
+    >
+      &#8249; {/* Unicode for left arrow */}
+    </button>
+  );
+
+  const CustomNextArrow = ({ onClick }: any) => (
+    <button
+      onClick={onClick}
+      className="absolute right-0 top-1/2 transform -translate-y-1/2 p-3 w-5 py-3 bg-black bg-opacity-60  text-white rounded-full"
+      style={{ zIndex: 2 }}
+    >
+      &#8250; {/* Unicode for right arrow */}
+    </button>
+  );
+
+  console.log(imgGal);
   return (
     <section className=" overflow-hidden">
       <div className=" bg-[url('/pricing.jpg')]  backdrop-blur-xl   bg-cover bg-bottom w-screen h-96  text-center flex justify-center items-center text-5xl   ">
@@ -148,7 +208,7 @@ const page = () => {
               width={600}
               height={600}
             />
-            <div className="w-full flex flex-col justify-between p-4 gap-4 leading-normal">
+            <div className="w-full flex flex-col  justify-between p-4 gap-4 leading-normal">
               <h5 className="mb-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {priceToShow?.title}
               </h5>
@@ -159,12 +219,20 @@ const page = () => {
                 <span className="text-3xl font-bold text-gray-900 dark:text-white">
                   RS.{priceToShow?.cost}
                 </span>
-                <a
-                  href="/contact"
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Contact Now
-                </a>
+                <div className="flex justify-center gap-10 max-sm:flex-col items-center ">
+                  <a
+                    href="/contact"
+                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Contact Now
+                  </a>
+                  <div
+                    onClick={() => openGallery(imgGal)}
+                    className="text-white w-fit bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer "
+                  >
+                    Open Gallery
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -195,6 +263,56 @@ const page = () => {
           </div>
         </>
       )}
+
+      <>
+        <div>
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={closeGallery}
+            contentLabel="Project Gallery"
+            style={customStyles}
+          >
+            {imgGal && (
+              <div className="gallery">
+                <div className="flex justify-between items-center py-2 max-sm:py-16">
+                  {" "}
+                  <h2>{imgGal.name}</h2>
+                  <button
+                    onClick={closeGallery}
+                    className="bg-black py-2 m-3 rounded-md px-5 text-white"
+                  >
+                    Close
+                  </button>
+                </div>
+
+                <Carousel
+                  showArrows={true}
+                  infiniteLoop={true}
+                  autoPlay={true}
+                  dynamicHeight={false}
+                  showThumbs={false}
+                  renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                    hasPrev && <CustomPrevArrow onClick={onClickHandler} />
+                  }
+                  renderArrowNext={(onClickHandler, hasNext, label) =>
+                    hasNext && <CustomNextArrow onClick={onClickHandler} />
+                  }
+                >
+                  {imgGal.images.map((image, index) => (
+                    <div key={index}>
+                      <img
+                        src={image}
+                        alt={image}
+                        className="gallery-image p-7 max-sm:px-10 object-cover max-sm:h-96"
+                      />
+                    </div>
+                  ))}
+                </Carousel>
+              </div>
+            )}
+          </Modal>
+        </div>
+      </>
 
       {/* })} */}
       {/* <div className="flex justify-center items-center my-10 px-10">

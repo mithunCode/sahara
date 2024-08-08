@@ -29,7 +29,7 @@ const CircleCounter = ({ targetNumber, pType }: any) => {
 
   useEffect(() => {
     if (isVisible && number < targetNumber) {
-      const timer = setTimeout(() => setNumber(number + 1), 30); // Update every 20ms
+      const timer = setTimeout(() => setNumber(number + 1), 50); // Update every 20ms
       return () => clearTimeout(timer); // Clean up the timer
     }
   }, [number, targetNumber, isVisible]);

@@ -247,8 +247,8 @@ const Hero = () => {
             </p>
 
             <div className="w-screen flex justify-around items-center max-sm:flex-col gap-4 py-4 ">
-              <CircleCounter targetNumber={90} pType="Completed" />
-              <CircleCounter targetNumber={30} pType="Ongoing" />
+              <CircleCounter targetNumber={30} pType="Completed" />
+              <CircleCounter targetNumber={5} pType="Ongoing" />
             </div>
 
             <a

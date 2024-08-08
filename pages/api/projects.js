@@ -3,7 +3,7 @@
 
 export const projectsData = [
   {
-    name: "Project1-Name",
+    name: "Civil Construction",
     images: [
       "/galleryImages/1.jpg",
       "/galleryImages/2.jpg",
@@ -11,7 +11,19 @@ export const projectsData = [
     ],
   },
   {
-    name: "Project2-Name",
+    name: "Building Renovation",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Building Maintenance",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Architectural Design",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Electrical Work",
     images: [
       "/galleryImages/3.jpg",
       "/galleryImages/2.jpg",
@@ -19,7 +31,7 @@ export const projectsData = [
     ],
   },
   {
-    name: "Project3-Name",
+    name: "Fabrication Work",
     images: [
       "/galleryImages/2.jpg",
       "/galleryImages/1.jpg",
@@ -27,7 +39,31 @@ export const projectsData = [
     ],
   },
   {
-    name: "Project4-Name",
+    name: "Aluminium/Glass/Door Work",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Flooring Work",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Plumbing Work",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Wall Partition / False Ceiling Design",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Furnitures",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Modular Kitchen",
+    images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
+  },
+  {
+    name: "Painting",
     images: ["/galleryImages/4.jpg", "/galleryImages/5.jpg"],
   },
 ];
